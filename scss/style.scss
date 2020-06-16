@@ -9,7 +9,7 @@
   --max-w-group: 800px;
   --item-gap: 10px;
 }
-.tidiv {
+.custreview {
 
   &-group {
     display: flex;
@@ -101,20 +101,20 @@
   }
 
   /* выравнивание текста
-    tidiv-text__left
-    tidiv-text__right
+    custreview-text__left
+    custreview-text__right
   */
   &-text {
 
     &__right {
-      .tidiv-item {
+      .custreview-item {
         &__content {
           text-align: right;
         }
       }
     }
     &__left {
-      .tidiv-item {
+      .custreview-item {
         &__content {
           text-align: left;
         }
@@ -124,13 +124,13 @@
   }
 
   /* положение картинки относительно текста
-    tidiv-text__left
-    tidiv-text__right
+    custreview-text__left
+    custreview-text__right
   */
   &-image {
 
     &__right {
-      .tidiv-item {
+      .custreview-item {
         flex-direction: row-reverse;
 
         &__img {
@@ -141,7 +141,7 @@
       }
     }
     &__left {
-      .tidiv-item {
+      .custreview-item {
         &__img {
           margin: 0 var(--item-gap) 0 0;
         }
@@ -156,7 +156,7 @@
 
 
 @media screen and (max-width: 550px) {
-  .tidiv {
+  .custreview {
 
     &-item {
       flex-direction: column;
