@@ -1,0 +1,166 @@
+:root {
+  --border-width: 1px;
+  --border-color: #000;
+  --background-color: #f8f8f8;
+  --text-color: #000;
+  --text-size: 14px;
+  --font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  --count-item: 4;
+  --max-w-group: 800px;
+  --item-gap: 10px;
+}
+.tidiv {
+
+  &-group {
+    display: flex;
+    color: var(--text-color);
+    font-size: var(--text-size);
+    font-family: var(--font-family);
+
+    &__limited-width {
+      max-width: var(--max-w-group);
+    }
+
+    /* Ориентация компонентов в группе */
+    &__vertical {
+      flex-direction: column;
+
+      > * {
+        width: 100%;
+        margin: var(--item-gap) 0 0 0;
+      }
+    }
+    &__horizontal {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      > * {
+        flex: 1;
+        width: calc((100% / var(--count-item)) - calc(var(--count-item) * 10));
+        min-width: 300px;
+        margin: 0 var(--item-gap) var(--item-gap) 0;
+      }
+    }
+
+    /* Общие стили элементов в группе */
+    * {
+      color: inherit;
+      font-size: inherit;
+      box-sizing: inherit;
+    }
+
+    img {
+      max-width: 200px;
+      max-height: 200px;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      appearance: none;
+      color: inherit;
+      display: inline-block;
+    }
+
+    > * {
+      border: var(--border-width) solid var(--border-color);
+      background-color: var(--background-color);
+    }
+  }
+
+  &-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    box-sizing: border-box;
+
+    &__content {
+      vertical-align: inherit;
+      flex: 1;
+    }
+    &__title {
+      font-size: calc(var(--text-size) * 2);
+    }
+    &__text {
+      margin: 10px 0;
+    }
+
+    > * {
+      display: inline-block;
+    }
+  }
+
+  /* выравнивание текста
+    tidiv-text__left
+    tidiv-text__right
+  */
+  &-text {
+
+    &__right {
+      .tidiv-item {
+        &__content {
+          text-align: right;
+        }
+      }
+    }
+    &__left {
+      .tidiv-item {
+        &__content {
+          text-align: left;
+        }
+      }
+    }
+
+  }
+
+  /* положение картинки относительно текста
+    tidiv-text__left
+    tidiv-text__right
+  */
+  &-image {
+
+    &__right {
+      .tidiv-item {
+        flex-direction: row-reverse;
+
+        &__img {
+          margin: 0 0 0 var(--item-gap);
+        }
+        &__content {
+        }
+      }
+    }
+    &__left {
+      .tidiv-item {
+        &__img {
+          margin: 0 var(--item-gap) 0 0;
+        }
+        &__content {
+        }
+      }
+    }
+
+  }
+
+}
+
+
+@media screen and (max-width: 550px) {
+  .tidiv {
+
+    &-item {
+      flex-direction: column;
+    }
+  }
+}
+
