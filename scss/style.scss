@@ -5,7 +5,7 @@
   --text-color: #000;
   --text-size: 14px;
   --font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  --count-item: 4;
+  --count-item-horizontal: 4;
   --max-w-group: 800px;
   --item-gap: 10px;
 }
@@ -38,7 +38,7 @@
 
       > * {
         flex: 1;
-        width: calc((100% / var(--count-item)) - calc(var(--count-item) * var(--item-gap)));
+        width: calc((100% / var(--count-item-horizontal)) - calc(var(--count-item-horizontal) * var(--item-gap)));
         min-width: 300px;
         margin: 0 var(--item-gap) var(--item-gap) 0;
       }
@@ -46,7 +46,7 @@
 
     > * {
       flex: 1;
-      width: calc((100% / var(--count-item)) - calc(var(--count-item) * var(--item-gap)));
+      width: calc((100% / var(--count-item-horizontal)) - calc(var(--count-item-horizontal) * var(--item-gap)));
       min-width: 300px;
       margin: 0 var(--item-gap) var(--item-gap) 0;
     }
