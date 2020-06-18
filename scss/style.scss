@@ -18,10 +18,7 @@
     color: var(--text-color);
     font-size: var(--text-size);
     font-family: var(--font-family);
-
-    &__limited-width {
-      max-width: var(--max-w-group);
-    }
+    max-width: var(--max-w-group);
 
     /* Ориентация компонентов в группе */
     &__vertical {
@@ -37,8 +34,7 @@
       flex-wrap: wrap;
 
       > * {
-        flex: 1;
-        width: calc((100% / var(--count-item-horizontal)) - calc(var(--count-item-horizontal) * var(--item-gap)));
+        width: calc((100% / var(--count-item-horizontal)) - calc((var(--count-item-horizontal) - 1) * var(--item-gap)));
         min-width: 300px;
         margin: 0 var(--item-gap) var(--item-gap) 0;
       }
