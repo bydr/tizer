@@ -1,43 +1,33 @@
-:root {
-  --border-width: 1px;
-  --border-color: #000;
-  --background-color: #f8f8f8;
-  --text-color: #000;
-  --text-size: 14px;
-  --font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  --count-item-horizontal: 4;
-  --max-w-group: 800px;
-  --item-gap: 10px;
-}
+$border-width: 1px;
+$border-color: #000;
+$background-color: #f8f8f8;
+$text-color: #000;
+$text-size: 14px;
+$text-size-title: 25px;
+$font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+$count-item-horizontal: 4;
+$max-w-group: initial;
+$item-gap: 10px;
+
+
 .custreview {
 
   &-group {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    color: var(--text-color);
-    font-size: var(--text-size);
-    font-family: var(--font-family);
-    max-width: var(--max-w-group);
+    display: grid;
+    grid-template-columns: repeat($count-item-horizontal, 1fr);
+    color: $text-color;
+    font-size: $text-size;
+    font-family: $font-family;
+    max-width: $max-w-group;
+    grid-gap: $item-gap;
 
     /* Ориентация компонентов в группе */
     &__vertical {
-      flex-direction: column;
-
-      > * {
-        width: 100%;
-        margin: var(--item-gap) 0 0 0;
-      }
+      display: grid;
+      grid-template-columns: 1fr;
     }
     &__horizontal {
-      flex-direction: row;
-      flex-wrap: wrap;
-
-      > * {
-        width: calc((100% / var(--count-item-horizontal)) - calc((var(--count-item-horizontal) - 1) * var(--item-gap)));
-        min-width: 300px;
-        margin: 0 var(--item-gap) var(--item-gap) 0;
-      }
+      grid-template-columns: repeat($count-item-horizontal, 1fr);
     }
 
 
@@ -49,13 +39,16 @@
     }
 
     img {
-      width: 100%;
-      height: auto;
       display: block;
+      max-height: 300px;
+      max-width: 100%;
+      width: initial;
+      height: auto;
     }
     .custreview-item__img {
-      max-height: 400px;
+      position: relative;
       overflow: hidden;
+      max-width: 50%;
     }
 
     a {
@@ -65,8 +58,8 @@
     }
 
     > * {
-      border: var(--border-width) solid var(--border-color);
-      background-color: var(--background-color);
+      border: $border-width solid $border-color;
+      background-color: $background-color;
     }
   }
 
@@ -90,7 +83,7 @@
       flex: 1;
     }
     &__title {
-      font-size: calc(var(--text-size) * 2);
+      font-size: $text-size-title;
     }
     &__text {
       margin: 10px 0;
@@ -136,7 +129,7 @@
         flex-direction: row-reverse;
 
         &__img {
-          margin: 0 0 0 var(--item-gap);
+          margin: 0 0 0 $item-gap;
         }
         &__content {
         }
@@ -145,7 +138,7 @@
     &__left {
       .custreview-item {
         &__img {
-          margin: 0 var(--item-gap) 0 0;
+          margin: 0 $item-gap 0 0;
         }
         &__content {
         }
@@ -156,7 +149,7 @@
         flex-direction: column;
 
         &__img {
-          margin: 0 0 var(--item-gap) 0;
+          margin: 0 0 $item-gap 0;
         }
         > * {
           width: 100%;
