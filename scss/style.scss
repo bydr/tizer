@@ -1,3 +1,18 @@
+/*macros*/
+$border-width: '%border-width%';
+$border-color: '%border-color%';
+$background-color: '%background-color%';
+$text-color: '%text-color%';
+$text-size: '%text-size%';
+$text-size-title: 25px;
+$font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+$count-item-horizontal: '%count-item-horizontal%';
+$max-w-group: '%max-w-group%';
+$item-gap: '%item-gap%';
+/*macros*/
+
+/*test*/
+/*
 $border-width: 1px;
 $border-color: #000;
 $background-color: #f8f8f8;
@@ -8,7 +23,8 @@ $font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 $count-item-horizontal: 4;
 $max-w-group: initial;
 $item-gap: 10px;
-
+*/
+/*test*/
 
 .custreview {
 
